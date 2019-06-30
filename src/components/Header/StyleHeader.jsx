@@ -11,29 +11,10 @@ const style = css`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 50px;
+    height: 64px;
     padding: 0 32px;
     font-family: "Julius Sans One", sans-serif;
     background-color: ${colors.white};
-  }
-
-  header > a {
-    height: 24px;
-    width: 24px;
-    transition: fill 0.1s ease-in;
-    fill: rgba(${colors.blackRGB}, 0.6);
-  }
-
-  header > a:hover {
-    fill: rgba(${colors.blackRGB}, 0.4);
-  }
-
-  header a[data-visible="false"] {
-    visibility: hidden;
-  }
-
-  header > button {
-    display: none;
   }
 `;
 

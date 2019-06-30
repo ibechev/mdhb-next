@@ -17,15 +17,14 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
-
+    const { Component, pageProps, router } = this.props;
     return (
       <Container>
         <Head>
           <title>MDHB</title>
           <meta
             name="viewport"
-            content="initial-scale=1.0, width=device-width"
+            content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"
             key="viewport"
           />
           <meta name="description" content="...to do" />
@@ -34,7 +33,7 @@ class MyApp extends App {
             rel="stylesheet"
           />
         </Head>
-        <Header />
+        <Header pathname={router.pathname} />
         <Component {...pageProps} />
         <style jsx global>
           {Global}

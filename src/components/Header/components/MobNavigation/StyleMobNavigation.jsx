@@ -2,20 +2,23 @@ import css from "styled-jsx/css";
 import { colors } from "../../../../style/Variables";
 
 const style = css`
+  .mob-navigation {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+  }
+
   @media only screen and (min-width: 500px) {
     .mob-navigation {
       display: none;
     }
   }
 
-  .mob-navigation {
-    position: fixed;
-  }
-
   .menu {
     position: fixed;
     height: 100%;
-    width: 80%;
+    width: 85%;
     padding: 32px;
     top: 0;
     right: 0;
@@ -23,12 +26,44 @@ const style = css`
     background-color: ${colors.white};
     box-shadow: unset;
     transform: translate3d(100%, 0, 0);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
   [data-isopen="true"] {
-    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.3);
     transform: translate3d(0, 0, 0);
+  }
+
+  .menu-items-list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 32px;
+  }
+
+  .menu-item {
+    display: flex;
+    font-size: 24px;
+    height: 64px;
+    color: rgba(${colors.blackRGB}, 0.5);
+  }
+
+  .line-active {
+    display: inline-block;
+    height: 100%;
+    width: 2px;
+    background-color: rgba(${colors.blackRGB}, 0.5);
+    opacity: 0;
+  }
+
+  .line-active.active {
+    opacity: 1;
+  }
+
+  .menu-item a {
+    height: 100%;
+    padding: 0 30px;
+    line-height: 64px;
   }
 
   .overlay {
@@ -38,10 +73,13 @@ const style = css`
     width: 100%;
     z-index: -1;
     visibility: hidden;
+    transition: background-color 0.15s ease-in-out;
+    background-color: transparent;
   }
 
   .overlay[data-show="true"] {
     visibility: visible;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 `;
 

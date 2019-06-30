@@ -1,47 +1,25 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React from "react";
+import PropTypes from "prop-types";
 
-import HomeIcon from "../../../static/home.svg";
-import BurgerIcon from "../../../static/burger.svg";
+import HomeIcon from "./components/HomeIcon/HomeIcon";
 import Navigation from "./components/Navigation/Navigation";
 import MobNavigation from "./components/MobNavigation/MobNavigation";
-import Button from "../Button/Button";
 
 import style from "./StyleHeader";
 
-const useResizeHeader = setMobNavOpen => {
-  const resizeHandler = () => {
-    if (window.innerWidth > 499) setMobNavOpen(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeHandler);
-    return () => removeEventListener("resize", resizeHandler);
-  }, []);
-};
-
-const Header = () => {
-  const [mobNavOpen, setMobNavOpen] = useState(false);
-  const openNav = () => setMobNavOpen(true);
-  const closeNav = () => setMobNavOpen(false);
-  useResizeHeader(setMobNavOpen);
-
+const Header = ({ pathname }) => {
   return (
     <header>
-      <Link href="/">
-        <a data-visible={!mobNavOpen}>
-          <HomeIcon />
-        </a>
-      </Link>
-
-      <Button onClick={openNav} className="btn-icon">
-        <BurgerIcon />
-      </Button>
-      <Navigation />
-      <MobNavigation isOpen={mobNavOpen} handleClose={closeNav} />
+      <HomeIcon pathname={pathname} />
+      <Navigation pathname={pathname} />
+      <MobNavigation pathname={pathname} />
       <style jsx>{style}</style>
     </header>
   );
+};
+
+Header.propTypes = {
+  pathname: PropTypes.string.isRequired
 };
 
 export default Header;

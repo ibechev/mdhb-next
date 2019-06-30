@@ -9,9 +9,9 @@ export const labels = {
 export const constants = {
   routes: {
     HOME: "/",
-    SERVICES: "services",
-    GALLERY: "gallery",
-    CONTACT: "contact",
-    ABOUT: "about"
+    SERVICES: "/services",
+    GALLERY: "/gallery",
+    CONTACT: "/contact",
+    ABOUT: "/about"
   }
 };

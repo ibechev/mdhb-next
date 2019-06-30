@@ -17,11 +17,11 @@ const style = css`
     height: 24px;
     width: 24px;
     transition: fill 0.1s ease-in;
-    fill: rgba(${colors.blackRGB}, 0.6);
+    fill: rgba(${colors.blackRGB}, 0.5);
   }
 
   .btn-icon:hover {
-    fill: rgba(${colors.blackRGB}, 0.4);
+    fill: rgba(${colors.blackRGB}, 0.8);
   }
 `;
 
