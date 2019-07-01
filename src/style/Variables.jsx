@@ -1,6 +1,6 @@
 export const colors = {
   // === COLORS ===
-  white: "white",
+  white: "#ffffff",
   primaryWhite: "rgba(white, 0.9)",
   secondaryWhite: "rgba(white, 0.75)",
   ternaryWhite: "rgba(white,  0.70)",
@@ -11,7 +11,11 @@ export const colors = {
 
   redShade: "#c0392b",
   blueShade: "#2c3e50",
-  grayShade: "#f5f5f5"
+  grayShade: "#f5f5f5",
+
+  lightGrey: "#f8f8f8",
+
+  blackRGB: "0, 0, 0"
 };
 
 export const fonts = {

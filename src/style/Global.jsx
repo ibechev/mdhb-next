@@ -1,5 +1,5 @@
 import css from "styled-jsx/css";
-import { fonts } from "./Variables";
+import { fonts, colors } from "./Variables";
 
 const Global = css.global`
   *,
@@ -16,7 +16,7 @@ const Global = css.global`
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: inherit;
+    background-color: ${colors.lightGrey};
   }
 
   html {

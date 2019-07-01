@@ -1,5 +1,9 @@
-const withImages = require("next-images");
-module.exports = withImages({
+const withSvg = require("next-react-svg");
+const path = require("path");
+
+module.exports = withSvg({
+  include: path.resolve(__dirname, "static"),
+
   webpack(config, { dev }) {
     if (dev) {
       config.module.rules.push({
@@ -11,6 +15,17 @@ module.exports = withImages({
         }
       });
     }
+    config.module.rules.push({
+      test: /\.(jpe?g|png|gif)$/i,
+      exclude: /node_modules/,
+      loader: "url-loader",
+      options: {
+        limit: 50000,
+        prefix: "image",
+        name: "[name].[ext]",
+        outputPath: "static"
+      }
+    });
     return config;
   }
 });

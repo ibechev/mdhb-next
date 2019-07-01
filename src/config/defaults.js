@@ -7,9 +7,11 @@ export const labels = {
 };
 
 export const constants = {
-  HOME: "/",
-  SERVICES: "services",
-  GALLERY: "gallery",
-  CONTACT: "contact",
-  ABOUT: "about"
+  routes: {
+    HOME: "/",
+    SERVICES: "/services",
+    GALLERY: "/gallery",
+    CONTACT: "/contact",
+    ABOUT: "/about"
+  }
 };
